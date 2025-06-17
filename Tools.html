@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/5/w3.css">
+</head>
+<script>
+	function addFunction() {
+	let no1 = parseInt (document.getElementById("no1").value);
+	let no2 = parseInt (document.getElementById("no2").value);
+	let resCal = no1 + no2;
+	document.getElementById("resultCal").value = resCal.toString();
+	
+}
+
+	function subFunction() {
+	let no1 = parseInt (document.getElementById("no1").value);
+	let no2 = parseInt (document.getElementById("no2").value);
+	let resCal = no1 - no2;
+	document.getElementById("resultCal").value = resCal.toString();
+	
+}
+
+	function mulFunction() {
+	let no1 = parseInt (document.getElementById("no1").value);
+	let no2 = parseInt (document.getElementById("no2").value);
+	let resCal = no1 * no2;
+	document.getElementById("resultCal").value = resCal.toString();
+	
+}
+
+	function divFunction() {
+	let no1 = parseInt (document.getElementById("no1").value);
+	let no2 = parseInt (document.getElementById("no2").value);
+	let resCal = no1 / no2;
+	document.getElementById("resultCal").value = resCal.toString();
+	
+	
+}
+
+	function bmiChecker() {
+	let weight = parseFloat(document.getElementById("Weight").value);
+	let height = parseFloat(document.getElementById("Height").value);
+
+	if (isNaN(weight) || isNaN(height) || height <= 0 || weight <= 0) {
+		alert("Please enter valid height and weight values.");
+		return;
+	}
+
+	let bmi = weight / (height * height);
+	let status = "";
+
+	if (bmi < 18.5) {
+		status = "Underweight";
+	} else if (bmi >= 18.5 && bmi <= 24.9) {
+		status = "Normal";
+	} else if (bmi >= 25.0 && bmi <= 29.9) {
+		status = "Overweight";
+	} else {
+		status = "Obese";
+	}
+
+	document.getElementById("resultBmi").value = bmi.toFixed(2);
+	document.getElementById("status").value = status;
+}
+
+	function incomeCalc() {
+	let Income = parseInt (document.getElementById("Income").value);
+	let Tax = parseInt (document.getElementById("Tax").value);
+
+	if (Income <= 5000 ) {
+		Tax=0;
+		document.getElementById("Tax").value = Tax.toFixed(2);
+	} else if(Income > 5001 && Income <= 20000){
+		Tax = 0.01 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	} else if(Income > 20001 && Income <= 35000){
+		Tax = 0.03 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 35001 && Income <= 50000){
+		Tax = 0.08 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 50001 && Income <= 70000){
+		Tax = 0.13 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 75001 && Income <= 100000){
+		Tax = 0.21 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	} 
+	  else if(Income > 100001 && Income <= 250000){
+		Tax = 0.24 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 250001 && Income <= 400000){
+		Tax = 0.245 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 400001 && Income <= 600000){
+		Tax = 0.25 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 600001 && Income <= 1000000){
+		Tax = 0.26 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 10000001 && Income <= 2000000){
+		Tax = 0.28 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else if(Income > 2000000 ){
+		Tax = 0.30 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2); 
+	}
+	  else {
+		Tax = 0.05 * Income;
+		document.getElementById("Tax").value = Tax.toFixed(2);
+	}
+}	
+
+	function mtocm() {
+	let number= parseFloat(document.getElementById("number").value);
+	let resCon= number*100;
+	document.getElementById("resultCon").value= resCon.toFixed(2);
+}
+
+	function cmtom() {
+	let number= parseFloat(document.getElementById("number").value);
+	let resCon= number/100;
+	document.getElementById("resultCon").value= resCon.toFixed(2);
+}
+
+	function mtokm() {
+	let number= parseFloat(document.getElementById("number").value);
+	let resCon= number*1000;
+	document.getElementById("resultCon").value= resCon.toFixed(2);
+} 
+
+	function kmtom() {
+	let number= parseFloat(document.getElementById("number").value);
+	let resCon= number/1000;
+	document.getElementById("resultCon").value= resCon.toFixed(2);
+}	
+
+
+</script>
+<body>
+	<div class="w3-container w3-section w3-cyan">
+	<form>
+	<h1><u>Simple Calculator</u></h1>
+
+	<hr>
+	<label>First Number</label>
+	<input type="text" id="no1"></input></p>
+	<p>
+	<label>Second Number</label>
+	<input type="text" id="no2"></input></p>
+	<p>
+	<label>Result</label>
+	<input type="text" id="resultCal"></input></p>
+	
+	<p>
+	<input type="button" onclick ="addFunction()" id="tot" value="Add (+)"></input>
+	<input type="button" onclick ="subFunction()" id="tot" value="Substract (-)"></input>
+	<input type="button" onclick ="mulFunction()" id="tot" value="Multiply (*)"></input>
+	<input type="button" onclick ="divFunction()" id="tot" value="Divided (/)"></input>
+	<input type="reset"  value="Clear"></input>
+
+
+	</form>
+	</div>	
+
+	<div class="w3-container w3-section w3-blue">
+	<form>
+		<h1><u>BMI Checker</u></h1>
+		<hr>
+		<p>
+			<label>Height (m)</label>
+			<input type="number" id="Height" step="0.01">
+		</p>
+		<p>
+			<label>Weight (kg)</label>
+			<input type="number" id="Weight">
+		</p>
+		<p>
+			<input type="button" onclick="bmiChecker()" value="Calculate">
+		</p>
+		<p>
+			<label>BMI</label>
+			<input type="text" id="resultBmi" readonly>
+		</p>
+		<p>
+			<label>Status</label>
+			<input type="text" id="status" readonly>
+		</p>
+	</form>
+	</div>
+
+	<div class="w3-container w3-section w3-green">
+	<form>
+	<h1><u>Income Tax Calculator</u></h1>
+
+	<hr>
+	<label>Annual Income:</label>
+	<input type="text" id="Income"></input></p>
+	
+	<input type="button" onclick ="incomeCalc()" value="Calculate"></input>
+	
+	<p>
+	<label>Tax Amount:</label>
+	<input type="text" id="Tax"></input></p>
+	</form>
+	</div>
+
+	<div class="w3-container w3-section w3-yellow">
+	<form>
+	<h1><u>Unit Converter</u></h1>
+	<hr>
+	<p>
+	<label class="container">Number</label>
+	<input type="number" id="number"></input></p>
+
+	<p>
+	<input type="button" onclick ="mtocm()" id="tot" value="M to CM"></input>
+	<input type="button" onclick ="cmtom()" id="tot" value="CM to M"></input>
+	<input type="button" onclick ="mtokm()" id="tot" value="M to KM"></input>
+	<input type="button" onclick ="kmtom()" id="tot" value="KM to M"></input>
+	<input type="reset"  value="Clear"></input></p>
+	<br>
+
+	<label>Result</label>
+	<input type="text" id="resultCon"></input>
+
+	<p id="resultCon" class="w3-panel w3-border w3-white w3-white"></p>
+	</div>
+
+</body>
+</html>
